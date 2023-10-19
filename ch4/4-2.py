@@ -1,15 +1,17 @@
 import cv2 as cv
 
-img=cv.imread('soccer.jpg')	# 영상 읽기
+# Canny 에지
+# img = cv.imread('soccer.jpg')  # 영상 읽기
+img = cv.imread('check.png')
 
-gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # Canny 알고리즘 적용 위해 영상 gray 처리
 
-canny1=cv.Canny(gray,50,150)	# Tlow=50, Thigh=150으로 설정
-canny2=cv.Canny(gray,100,200)	# Tlow=100, Thigh=200으로 설정
+canny1 = cv.Canny(gray, 50, 150)  # Tlow=50, Thigh=150으로 설정
+canny2 = cv.Canny(gray, 100, 200)  # Tlow=100, Thigh=200으로 설정
 
-cv.imshow('Original',gray)
-cv.imshow('Canny1',canny1)
-cv.imshow('Canny2',canny2)
+cv.imshow('Original', gray)
+cv.imshow('Canny1', canny1)
+cv.imshow('Canny2', canny2)
 
 cv.waitKey()
 cv.destroyAllWindows()
