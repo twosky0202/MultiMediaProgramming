@@ -23,7 +23,7 @@ dst_points = np.float32([[0, cols - 1], [rows - 1, cols - 1], [0, 0]])
 
 affine_matrix = cv.getAffineTransform(src_points, dst_points)
 # img_symmetry = cv.warpAffine(img, affine_matrix, (cols, rows))  # 3번째 인자는 출력 영상의 크기(가로, 세로)
-img_symmetry = cv.warpAffine(img, affine_matrix, (rows,cols))
+img_symmetry = cv.warpAffine(img, affine_matrix, (rows, cols))  # 반시계 방향 rotate
 
 cv.imshow('Original', img)
 cv.imshow('Symmetry', img_symmetry)

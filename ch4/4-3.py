@@ -8,7 +8,8 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 # canny = cv.Canny(gray, 100, 200)  # 에지 이미지
 
 t, bin_gray = cv.threshold(gray, 0, 255, cv.THRESH_BINARY+cv.THRESH_OTSU)  # 이진 영상
-contour, hierarchy = cv.findContours(bin_gray, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
+# contour, hierarchy = cv.findContours(bin_gray, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
+contour, hierarchy = cv.findContours(bin_gray, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 
 lcontour = []
 for i in range(len(contour)):  # 너무 짧으면 의미있는 경계선 아님
