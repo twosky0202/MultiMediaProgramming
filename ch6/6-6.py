@@ -90,7 +90,7 @@ class SpecialEffect(QMainWindow):
             cv.imwrite(fname[0], self.sketch_color)
         elif i == 4:
             cv.imwrite(fname[0], self.oil)
-        elif i ==5:
+        elif i == 5:
             cv.imwrite(fname[0], self.motion)
 
     def quitFunction(self):
